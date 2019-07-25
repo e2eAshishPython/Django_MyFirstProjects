@@ -1,0 +1,47 @@
+{% extends 'base.html'  %}
+
+
+{% block content %}
+<section>
+    <h2 class="block-title text-center">
+        Reservations			
+    </h2>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div><!-- /.modal -->
+
+    <table class="table table-bordered table-hovered "cellspacing='0'>
+        <tr>
+            <th>Name</th>
+            <th>Email Address</th>
+
+            
+            <th>ContectNo</th>
+            <th>No of person</th>
+            <th>Date </th>
+            <th>Time</th>
+            <th>preferred food</th>
+            <th>Occasion</th> 
+            <th>Actions</th>
+        
+        </tr>
+        {% for Reservetion in object_list %}
+            <tr>
+                <td>{{ Reservetion.name }}</td>
+                <td>{{ Reservetion.email }}</td>
+                <td>{{ Reservetion.ContectNo }}</td>
+                
+                <td>{{ Reservetion.No_Of_person }}</td>
+                <td>{{ Reservetion.Date }}</td>
+                <td>{{ Reservetion.Time }}</td>
+                <td>{{ Reservetion.preferred_food }}</td>
+                <td>{{ Reservetion.Occasion }}</td>
+                
+                <td>
+                    <a class="fa fa-pencil" data-toggle="modal" href="#" data-target="#modal" title="edit item" data-tooltip></a> |
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

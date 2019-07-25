@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+        <div class="form-reservations-box">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <h2 class="block-title text-center">
+                Login			
+            </h2>
+                </div>
+                 <form method="post" autocomplete="off" class="reservations-box" name="contactform">
+                        <!-- <form id="contact-form" action="addNewname.html"> -->
+                                {% csrf_token %}
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-box">
+                                        <input type="text" name="email" id="email" placeholder="User Name" required="required" data-error="User id is required.">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-box">
+                                        <input disabled  style="visibility: hidden;"
+                                     type="text" name="" id="" placeholder="E-Mail ID" required="required" data-error="E-mail id is required.">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-box">
+                                        <input type="password" name="password" id="password" placeholder="Enter your Password" required="required" data-error="Password is required.">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <!-- <div class="reserve-book-btn text-center"> -->
+                                            <div style="color: saddlebrown">
+                                        <button class="hvr-underline-from-center" type="submit" value="SEND" id="submit">Login </button>
+                                    </div>
+                                </div>
+
+                               
+                    
+                </form>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <!-- <div class="reserve-book-btn text-center"> -->
+                                <div style="color: saddlebrown">
+                                    To Register
+                                        <a href="signup" style="color: salmon;">Signup</a>
+                        </div>
+                    </div>
+                
+                
+                    
+               
+                {% if messages %}
+                <ul>
+                   {% for message in messages %}
+                       <li style="color: red" >{{ message }}</li>
+                   {% endfor %}
+                </ul>
+                {% endif %}
+                <!-- end form -->
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end reservations-box -->
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "inventory/base.html" %}
+
+{% block content %}
+
+<h1>
+  {{ dish.name }}
+  {% if user == dish.user %}
+    (<a href="#">edit</a>)
+  {% endif %}
+</h1>
+
+<p>{{ dish.description }}</p>
+
+{% if dish.image %}
+  <p><img src="{{ dish.image.url }}" alt="URL" /></p>
+{% endif %}
+
+<p>Served by 
+  <a href="#">
+    {{ dish.restaurant.name}}
+  </a>
+</p>
+
+{% endblock %}
+
+{% block footer %}
+  Created by {{ dish.user }} on {{ dish.date }}
+{% endblock %}
